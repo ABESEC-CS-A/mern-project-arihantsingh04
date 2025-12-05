@@ -14,7 +14,7 @@ mongoose.connect(process.env.MONGODB_URI)
       const salt = await bcrypt.genSalt(10);
       const hashedPassword = await bcrypt.hash(process.env.ADMIN_INIT_PASSWORD, salt);
       const admin = new User({
-        name: "Super Admin", 
+        name: "Admin", 
         email: process.env.ADMIN_INIT_EMAIL,
         password: hashedPassword,
         role: 'admin'
